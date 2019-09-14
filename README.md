@@ -1,4 +1,4 @@
-# Battery Time and Percentage
+# Battery Time (Percentage) Compact
 
 Battery fully charged: <img src="https://raw.githubusercontent.com/SaGrLand/gnome-shell-battery-time-and-percentage/master/battery_full.png">
 
