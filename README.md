@@ -8,4 +8,6 @@ Battery charging: <img src="https://raw.githubusercontent.com/SaGrLand/gnome-she
 
 Battery fully charged: <img src="https://raw.githubusercontent.com/SaGrLand/gnome-shell-battery-time-and-percentage/master/battery_full.png">
 
+Battery time estimating: <img src="https://raw.githubusercontent.com/SaGrLand/gnome-shell-battery-time-percentage-compact/master/battery_estimating-time.png">
+
 This is a fork of https://github.com/luispabon/gnome-shell-battery-time-and-percentage.
