@@ -1,9 +1,14 @@
 const Lang = imports.lang;
+var GObject = imports.gi.GObject;
 const UPower = imports.gi.UPowerGlib;
 const BaseIndicator = imports.ui.status.power.Indicator;
 
-var Indicator = class extends BaseIndicator {
-   // Adapted from _getStatus of the parent.
+var Indicator = GObject.registerClass(
+	{
+	GTypeName: 'Indicator'
+	},
+	class Indicator extends BaseIndicator
+	{
    _getBatteryStatus() {
       let seconds = 0;
 
@@ -42,3 +47,4 @@ var Indicator = class extends BaseIndicator {
       this._percentageLabel.clutter_text.set_markup('<span size="smaller">' + this._getBatteryStatus() + '</span>');
    }
 }
+);
