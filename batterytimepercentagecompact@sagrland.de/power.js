@@ -12,7 +12,7 @@ var Indicator = GObject.registerClass(
    _getBatteryStatus() {
       let seconds = 0;
 
-      const percentage = this._proxy.Percentage + '%'
+      const percentage = Math.round(this._proxy.Percentage) + '%'
 
       // Ensure percentage label is enabled regardless of gsettings
       this._percentageLabel.visible = true
