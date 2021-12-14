@@ -1,5 +1,5 @@
 {
-  "shell-version": ["3.28", "3.30", "3.32", "3.34", "3.36", "3.38", "40"],
+  "shell-version": ["3.28", "3.30", "3.32", "3.34", "3.36", "3.38", "40", "41"],
   "uuid": "batterytimepercentagecompact@sagrland.de",
   "url": "https://github.com/SaGrLand/gnome-shell-battery-time-percentage-compact",
   "settings-schema": "org.gnome.shell.extensions.batterytimepercentagecompact",
