@@ -10,6 +10,8 @@ Battery fully charged: <img src="https://raw.githubusercontent.com/SaGrLand/gnom
 
 Battery time estimating: <img src="https://raw.githubusercontent.com/SaGrLand/gnome-shell-battery-time-percentage-compact/master/battery_estimating-time.png">
 
+Battery not charging (Threshold reached): <img src="https://raw.githubusercontent.com/SaGrLand/gnome-shell-battery-time-percentage-compact/master/battery_not-charging.png">
+
 https://extensions.gnome.org/extension/2929/battery-time-percentage-compact/
 
 This is a fork of https://github.com/luispabon/gnome-shell-battery-time-and-percentage.
