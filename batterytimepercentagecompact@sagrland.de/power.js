@@ -23,12 +23,12 @@ var Indicator = GObject.registerClass(
          seconds = this._proxy.TimeToFull;
       } else if (this._proxy.State == UPower.DeviceState.DISCHARGING) {
          seconds = this._proxy.TimeToEmpty;
-      } else if (this._proxy.State == UPower.DeviceState.PENDING_CHARGING) {
+      } else if (this._proxy.State == UPower.DeviceState.PENDING_CHARGE) {
          // 'not charging' (ThinkPad status charging-threshold reached) is treated as PENDING_CHARGE
-         return _("… (%s)").format(percentage);
-      } else {
-         // state is one of PENDING_DISCHARGING
          return _("~ (%s)").format(percentage);
+      } else {
+         // state is PENDING_DISCHARGE
+         return _("… (%s)").format(percentage);
       }
 
       let time = Math.round(seconds / 60);
