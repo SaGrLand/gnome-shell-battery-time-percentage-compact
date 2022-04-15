@@ -1,4 +1,3 @@
-const Lang = imports.lang;
 var GObject = imports.gi.GObject;
 const UPower = imports.gi.UPowerGlib;
 const BaseIndicator = imports.ui.status.power.Indicator;
