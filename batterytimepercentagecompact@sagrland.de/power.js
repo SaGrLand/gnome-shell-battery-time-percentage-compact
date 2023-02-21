@@ -1,6 +1,7 @@
+const Lang = imports.lang;
 var GObject = imports.gi.GObject;
 const UPower = imports.gi.UPowerGlib;
-const BaseIndicator = imports.ui.status.power.Indicator;
+const BaseIndicator = imports.ui.status.system.Indicator;
 
 var Indicator = GObject.registerClass(
 	{
@@ -11,18 +12,21 @@ var Indicator = GObject.registerClass(
    _getBatteryStatus() {
       let seconds = 0;
 
-      const percentage = Math.round(this._proxy.Percentage) + '%'
+
+	  let proxy = this._systemItem.powerToggle._proxy;
+      let state = proxy.State;
+      const percentage = Math.round(proxy.Percentage) + '%'
 
       // Ensure percentage label is enabled regardless of gsettings
       this._percentageLabel.visible = true
 
-      if (this._proxy.State == UPower.DeviceState.FULLY_CHARGED) {
+      if (state == UPower.DeviceState.FULLY_CHARGED) {
          return '\u221E';
-      } else if (this._proxy.State == UPower.DeviceState.CHARGING) {
-         seconds = this._proxy.TimeToFull;
-      } else if (this._proxy.State == UPower.DeviceState.DISCHARGING) {
-         seconds = this._proxy.TimeToEmpty;
-      } else if (this._proxy.State == UPower.DeviceState.PENDING_CHARGE) {
+      } else if (state == UPower.DeviceState.CHARGING) {
+         seconds = proxy.TimeToFull;
+      } else if (state == UPower.DeviceState.DISCHARGING) {
+         seconds = proxy.TimeToEmpty;
+      } else if (state == UPower.DeviceState.PENDING_CHARGE) {
          // 'not charging' (ThinkPad status charging-threshold reached) is treated as PENDING_CHARGE
          return _("~ (%s)").format(percentage);
       } else {
