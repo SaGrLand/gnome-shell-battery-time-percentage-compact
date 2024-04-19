@@ -14,4 +14,4 @@ Battery not charging (Threshold reached): <img src="https://raw.githubuserconten
 
 https://extensions.gnome.org/extension/2929/battery-time-percentage-compact/
 
-This is a fork of https://github.com/luispabon/gnome-shell-battery-time-and-percentage.
+This is a fork of https://github.com/mzur/gnome-shell-batime (prior to Version 20: https://github.com/luispabon/gnome-shell-battery-time-and-percentage).
