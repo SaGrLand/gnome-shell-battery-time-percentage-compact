@@ -13,13 +13,21 @@ const _powerToggleSyncOverride = function () {
       return false;
    }
 
+   const percentage = Math.round(this._proxy.Percentage) + '%'
    let seconds = 0;
    let state = this._proxy.State;
 
-   if (this._proxy.State === UPower.DeviceState.CHARGING) {
+   if (this._proxy.State == UPower.DeviceState.FULLY_CHARGED) {
+         this.title = _('\u221E');
+         return true;
+   } else if (this._proxy.State === UPower.DeviceState.CHARGING) {
       seconds = this._proxy.TimeToFull;
    } else if (this._proxy.State === UPower.DeviceState.DISCHARGING) {
       seconds = this._proxy.TimeToEmpty;
+   } else {
+         // state is one of PENDING_CHARGING, PENDING_DISCHARGING
+         this.title = _("… (%s)").format(percentage);
+         return true;
    }
 
    // This can happen in various cases.
@@ -28,10 +36,16 @@ const _powerToggleSyncOverride = function () {
    }
 
    let time = Math.round(seconds / 60);
+   if (time == 0) {
+         // 0 is reported when UPower does not have enough data
+         // to estimate battery life
+         this.title = _("… (%s)").format(percentage);
+         return true;
+   }
    let minutes = time % 60;
    let hours = Math.floor(time / 60);
 
-   this.title = _('%d\u2236%02d').format(hours, minutes)
+   this.title = _('%d\u2236%02d (%s)').format(hours, minutes, percentage)
 
    return true;
 };
