@@ -50,7 +50,7 @@ const _powerToggleSyncOverride = function () {
    return true;
 };
 
-export default class Extension extends BaseExtension {
+export default class BatteryTimePercentageExtension extends BaseExtension {
    enable() {
       this._im = new InjectionManager();
       this._im.overrideMethod(Indicator.prototype, '_sync', function (_sync) {
