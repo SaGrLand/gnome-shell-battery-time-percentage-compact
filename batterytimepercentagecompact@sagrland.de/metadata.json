@@ -5,7 +5,6 @@
   ],
   "uuid": "batterytimepercentagecompact@sagrland.de",
   "url": "https://github.com/SaGrLand/gnome-shell-battery-time-percentage-compact",
-  "settings-schema": "org.gnome.shell.extensions.batterytimepercentagecompact",
   "gettext-domain": "batterytimepercentagecompact",
   "version": 20,
   "name": "Battery Time (Percentage) Compact",
