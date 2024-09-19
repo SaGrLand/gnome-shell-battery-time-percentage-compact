@@ -1,12 +1,13 @@
 {
   "shell-version": [
     "45", 
-    "46"
+    "46",
+    "47"
   ],
   "uuid": "batterytimepercentagecompact@sagrland.de",
   "url": "https://github.com/SaGrLand/gnome-shell-battery-time-percentage-compact",
   "gettext-domain": "batterytimepercentagecompact",
-  "version": 20,
+  "version": 21,
   "name": "Battery Time (Percentage) Compact",
   "description": "Show the remaining time until fully charged/discharged as well as percentage of battery charge in the panel."
 }
